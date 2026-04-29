@@ -17,9 +17,9 @@ body {
   --hover-scale-amount: 1.03;
   --hover-subtle-zoom-amount: 1.015;
   --hover-shadow-color: var(--color-shadow);
-  --hover-transition-duration: 0.25s;
-  --hover-transition-timing: ease-out;
-  --surface-transition-duration: 0.3s;
+  --hover-transition-duration: 0.15s;
+  --hover-transition-timing: ease;
+  --surface-transition-duration: 0.15s;
   --surface-transition-timing: var(--ease-out-quad);
   --submenu-animation-speed: 360ms;
   --submenu-animation-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -4212,4 +4212,17 @@ product-recommendations:has([data-has-recommendations='false']) {
     opacity: var(--atc-opacity, 1);
     translate: 0px var(--atc-destination, 0px);
   }
+}
+
+/* ── PRD §9 — Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--color-background); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 0; }
+
+/* ── PRD §9 — Card hover: background color shift, no zoom ── */
+.product-card-wrapper {
+  transition: background-color var(--hover-transition-duration) var(--hover-transition-timing);
+}
+.product-card-wrapper:hover {
+  background-color: var(--color-background-2, var(--color-background));
 }
